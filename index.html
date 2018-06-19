@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>New York Times Search </title>
+
+    <!-- Bootstrap CSS CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <style>
+    .card-body a {
+        word-break: break-all;
+    }
+    
+    .articleHeadline {
+        line-height: 1.5;
+    }
+    </style>
+</head>
+<body>
+
+    <!--Main Bootrap Search-->
+ <div class="container">
+
+        <!--jumbotron for title-->
+        <div class="jumbotron" style="background-color: #20215a; color: white;">
+            <h1 class="text-center">
+                <strong>
+                    <i class="fa fa newspaper-o"></i> New York Times Search</strong>
+            </h1>
+        </div>
+    
+    <!-- row for searching NYT-->
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+
+            <!--1st panel is handling the search parameters-->
+            <div class="card">
+                <div class="card-header">
+                    <strong>
+                        <i class="fa fa-list-alt"></i> Search Parameters</strong>
+                </div>
+                <div class="card-body">
+
+                    <!--here we create HTML form form for handling inputs-->
+                    <form role="form">
+
+                            <form>
+                                <div class="form-group">
+                                <label for="search">Search Term</label>
+                                      <input type="text" class="form-control" id="search-term">
+                                      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                    </div>
+
+                                    <!--here we capture the # of records that the user want to retreive-->
+                                    <div class="form-group">
+                                      <label for="pwd">Number of Records to Retrieve</label>
+                                      <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                                          <option selected value="1">1</option>
+                                          <!--setting the option for 5 as default-->
+                                          <option value="5" selected>5</option>
+                                          <option value="10">10</option>
+                                        </select>
+                                    </div>
+
+                                    <!--here we capture the Start Year Parameter-->
+                                    <div class="form-group">
+                                      <label for="start-year">Start Year (Optional):</label>
+                                      <input type="text" class="form-control" id="start-year">
+                                    </div>
+
+                                    <!--here we capture the endyear parameter-->
+                                    <div class="form-group">
+                                        <label for="end-year">End Year (Optional):</label>
+                                        <input type="text" class="form-control" id="end-year">
+                                    </div>
+                                    <!--here we have our final submit button-->
+                                    <button type="submit" class="btn btn-default" id="run-search">
+                                        <i class="fa fa-search"></i>Search</button>
+                                    <button class="btn btn-default" id="clear-all">
+                                        <i class="fa fa-trash"></i> Clear Results</button>
+                                
+
+                                  </form>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+    <!--this row will handle all of the retreived articles-->
+    <div class="row">
+        <div class="col-sm-12">
+            <br>
+
+            <!--this panel will initially be made up of a panel and wells for each of the articles retreived-->
+            <div class="card">
+                <!--panel heading for the retrieved articles box-->
+                <div class="card-header">
+                    <strong>
+                        <i class="fa fa-table"></i> Top Articles
+                    </strong>
+                </div>
+
+                <!--this main panel will hold each of the resulting articles-->
+                <div class="card-body" id="article-section">
+            </div>
+         </div>
+      </div>
+    </div>
+
+    <!--footer region-->
+    <div class="row">
+        <div class="col-sm-12">
+   
+        <!--line break-->
+            <hr>
+            <h5 class="text-center">
+                <small>Made with lots and lots of
+                    <i class="fa fa-heart"></i>
+                </small>
+            </h5>
+
+    </div>
+  <div>
+    
+</div>
+
+<!--jQuery-->
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+<!-- Code to the JavaScript File -->
+<script src="../scrapernytimes/assets/app.js"></script>
+    
+</body>
+</html>
